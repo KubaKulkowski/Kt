@@ -1,1 +1,34 @@
+# ###################################### #
+# Nazwa: Ktools (KubaTools)              #
+# Autor: Kuba Kulkowski                  #
+# Wersja : 0.1v (Naprawde sie updateuje) #
+# ###################################### #
 
+# -------------------------------------- #
+
+# ###### #
+# Config #
+# ###### #
+on script load:
+	if folder "plugins/Skript/scripts/Ktools" doesn't exists:
+		create folder "plugins/Skript/scripts/Ktools"
+		create file "plugins/Skript/scripts/Ktools/config.yml"
+		send "&6Pobieranie configu" to all players
+		download "https://pastebin.com/raw/70KA87uq" to file "plugins/Skript/scripts/Ktools/config.yml"
+		send "&6Pliki Ktools zostaly stworzone!" to all players
+		stop
+
+# ############ #
+# Aktualizacje #
+# ############ #
+# Uwaga! Zmiana linkow moze spowodowac bledy systemu aktualizacji! #
+on script load:
+	set {ver__} to result of connect to "https://raw.githubusercontent.com/KubaKulkowski/Kt/master/ver"
+	if {ver__} is not "0.1":
+		send "&8[&aKtools&8]&6 Dostepna jest nowa aktualizacja skryptu!" to all players
+		send "&8[&aKtools&8]&6 W ciagu paru sekund zostanie ona pobrana!" to all players
+    delete file "plugins/Skript/scripts/ktools.sk"
+    download "https://pastebin.com/raw/RXsQ0z19" to file "plugins/Skript/scripts/ktools.sk"
+		wait 2 second
+		send "&8[&aKtools&8]&6 Aktualizacja zostala pobrana!"
+		execute console command "sk reload ktools.sk"
