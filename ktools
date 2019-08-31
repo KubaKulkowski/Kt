@@ -1,7 +1,7 @@
 # ###################################### #
 # Nazwa: Ktools (KubaTools)              #
 # Autor: Kuba Kulkowski                  #
-# Wersja : 0.1v (Naprawde sie updateuje) #
+# Wersja : 0.2v (Naprawde sie updateuje) #
 # ###################################### #
 
 # -------------------------------------- #
@@ -27,8 +27,8 @@ on script load:
 	if {ver__} is not "0.1":
 		send "&8[&aKtools&8]&6 Dostepna jest nowa aktualizacja skryptu!" to all players
 		send "&8[&aKtools&8]&6 W ciagu paru sekund zostanie ona pobrana!" to all players
-    delete file "plugins/Skript/scripts/ktools.sk"
-    download "https://pastebin.com/raw/RXsQ0z19" to file "plugins/Skript/scripts/ktools.sk"
+		delete file "plugins/Skript/scripts/ktools.sk"
+		download "https://raw.githubusercontent.com/KubaKulkowski/Kt/master/ktools" to file "plugins/Skript/scripts/ktools.sk"
 		wait 2 second
 		send "&8[&aKtools&8]&6 Aktualizacja zostala pobrana!"
 		execute console command "sk reload ktools.sk"
